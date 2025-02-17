@@ -26,9 +26,6 @@
     vscode-extensions.llvm-vs-code-extensions.vscode-clangd
     svelte.svelte-vscode
     ms-vscode.cmake-tools
-    ms-dotnettools.vscode-dotnet-runtime
-    vscode-extensions.ms-dotnettools.csharp
-    vscode-extensions.ms-dotnettools.csdevkit
     visualstudiotoolsforunity.vstuc
     surendrajat.apklab
     loyieking.smalise
@@ -81,8 +78,6 @@ in {
     nixos-rebuild
     fusee-nano
     ghidra-bin
-    jetbrains.clion
-    jetbrains.idea-ultimate
     obs-studio
     tea
     miniserve
@@ -90,6 +85,8 @@ in {
     prismlauncher
     unstable.dotnetCorePackages.dotnet_9.sdk
     unstable.jetbrains.rider
+    unstable.jetbrains.clion
+    unstable.jetbrains.idea-community
     libfaketime
     unityhub
     kdePackages.kcalc
@@ -103,8 +100,12 @@ in {
     rclone
     digital
     nodejs
+    file
+    rsync
+    binwalk
+    qpwgraph
 
     (builtins.getFlake "github:Sanae6/010editor-flake").packages."${system}".default
-    (vscode-with-extensions.override {inherit vscodeExtensions;})
+    (unstable.vscode-with-extensions.override {inherit vscodeExtensions;})
   ];
 }
