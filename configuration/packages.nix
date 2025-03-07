@@ -4,7 +4,7 @@
     (import (builtins.fetchGit {
       url = "https://github.com/nix-community/nix-vscode-extensions";
       ref = "refs/heads/master";
-      rev = "370af219cf4ad7660e3ad4577849fb0478edb33c";
+      rev = "bcf7577daac02aa1a7dfaddc79324b7c6ca4af81";
     }))
     .extensions
     .${system};
@@ -29,6 +29,7 @@
     visualstudiotoolsforunity.vstuc
     surendrajat.apklab
     loyieking.smalise
+    denoland.vscode-deno
   ];
 in {
   fonts.packages = with pkgs; [
