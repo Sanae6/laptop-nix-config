@@ -105,6 +105,7 @@ in {
     rsync
     binwalk
     qpwgraph
+    dig
 
     (builtins.getFlake "github:Sanae6/010editor-flake").packages."${system}".default
     (unstable.vscode-with-extensions.override {inherit vscodeExtensions;})
