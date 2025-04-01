@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  unstablePkgs,
   inputs,
   ...
 }: let
@@ -18,7 +19,7 @@ in {
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelPackages = unstablePkgs.linuxPackages_zen;
   boot.supportedFilesystems = ["btrfs"];
 
   hardware.enableAllFirmware = true;
@@ -59,6 +60,7 @@ in {
     };
   };
   services.desktopManager.plasma6.enable = true;
+  hardware.graphics.enable = true;
 
   services.printing.enable = true;
   services.pipewire = {

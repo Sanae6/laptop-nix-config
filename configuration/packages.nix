@@ -1,13 +1,10 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  _010editor,
+  extensions,
+  ...
+}: let
   system = pkgs.system;
-  extensions =
-    (import (builtins.fetchGit {
-      url = "https://github.com/nix-community/nix-vscode-extensions";
-      ref = "refs/heads/master";
-      rev = "bcf7577daac02aa1a7dfaddc79324b7c6ca4af81";
-    }))
-    .extensions
-    .${system};
   vscodeExtensions = with pkgs;
   with extensions.vscode-marketplace; [
     trag1c.gleam-theme
@@ -30,6 +27,10 @@
     surendrajat.apklab
     loyieking.smalise
     denoland.vscode-deno
+    pbkit.vscode-pbkit
+    ms-python.python
+    haskell.haskell
+    justusadam.language-haskell
   ];
 in {
   fonts.packages = with pkgs; [
@@ -106,8 +107,10 @@ in {
     binwalk
     qpwgraph
     dig
+    signal-desktop
+    _010editor
+    OVMFFull
 
-    (builtins.getFlake "github:Sanae6/010editor-flake").packages."${system}".default
     (unstable.vscode-with-extensions.override {inherit vscodeExtensions;})
   ];
 }
