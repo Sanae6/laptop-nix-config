@@ -17,6 +17,7 @@ in {
     overlays = import ./overlays.nix {inherit inputs;};
   };
 
+  nix.package = pkgs.lix;
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   boot.kernelPackages = unstablePkgs.linuxPackages_zen;

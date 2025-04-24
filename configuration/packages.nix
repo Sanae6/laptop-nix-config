@@ -31,6 +31,8 @@
     ms-python.python
     haskell.haskell
     justusadam.language-haskell
+    baincd.stretchy-spaces-baincd
+    ocamllabs.ocaml-platform
   ];
 in {
   fonts.packages = with pkgs; [
@@ -110,7 +112,9 @@ in {
     signal-desktop
     _010editor
     OVMFFull
+    gdb
 
+    (unstable.discord-canary.override {withVencord = true;})
     (unstable.vscode-with-extensions.override {inherit vscodeExtensions;})
   ];
 }

@@ -51,12 +51,12 @@
 in
   pkgs.stdenv.mkDerivation rec {
     system = "x86_64-linux";
-    version = "1.7.6b";
+    version = "1.11.5b";
     pname = "zen-browser";
 
     src = builtins.fetchTarball {
       url = "https://github.com/zen-browser/desktop/releases/download/${version}/zen.linux-x86_64.tar.xz";
-      sha256 = "sha256:19v6n0a1j63i8i7c9615lh1fmbz8jakwyiy11imc9vbq1n6z0nm9";
+      sha256 = "sha256:1p3g4w6i3lx9s864y6jhdmw9i8g9dn46jg559k7l7kslkpqv8k9a";
     };
 
     desktopSrc = ./.;

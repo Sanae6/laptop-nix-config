@@ -1,7 +1,7 @@
 #!/usr/bin/env nu
 def --wrapped rebuild [subcmd: string, ...rest] {
   nix fmt
-  git add -A # make sure the goddamn files are added because nix stores won't include unchecked files
+  git add -A # make sure the goddamn files are added because nix won't include unchecked files
   let r = echo ...$rest | into string;
   nix-shell -p nixos-rebuild --command $"sudo nixos-rebuild --flake . ($subcmd) ($r)";
 };
