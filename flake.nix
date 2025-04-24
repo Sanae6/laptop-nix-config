@@ -1,4 +1,4 @@
-rec {
+{
   description = "NixOS configs";
 
   inputs = {
